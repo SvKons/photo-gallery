@@ -18,8 +18,8 @@ itemsL.forEach(item => {
             x: 0,
             scrollTrigger: {
                 trigger: item,
-                start: 'top 130%',
-                end: 'top 50%',
+                start: 'top 80%',
+                end: 'top 20%',
                 scrub: true,
             },
         }
@@ -37,8 +37,8 @@ itemsR.forEach(item => {
             x: 0,
             scrollTrigger: {
                 trigger: item,
-                start: 'top 150%',
-                end: 'top 50%',
+                start: 'top 100%',
+                end: 'top 80%',
                 scrub: true,
             },
         }
