@@ -95,7 +95,7 @@ body {
 @media (max-width: 600px) {
     .gallery {
         flex-direction: column;
-        padding: calc(var(--index) * 2) 0;
+        padding-bottom: 700px;
     }
 
     .gallery__left {

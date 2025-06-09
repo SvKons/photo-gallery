@@ -7,40 +7,61 @@ ScrollSmoother.create({
     effects: true,
 });
 
-let itemsL = gsap.utils.toArray('.gallery__left .gallery__item');
+if (window.innerWidth <= 600) {
+    let allItems = gsap.utils.toArray('.gallery__item');
 
-itemsL.forEach(item => {
-    gsap.fromTo(
-        item,
-        { opacity: 0, x: -90 },
-        {
-            opacity: 1,
-            x: 0,
-            scrollTrigger: {
-                trigger: item,
-                start: 'top 80%',
-                end: 'top 20%',
-                scrub: true,
-            },
-        }
-    );
-});
+    allItems.forEach((item, index) => {
+        let fromX = index % 2 === 0 ? -90 : 90;
 
-let itemsR = gsap.utils.toArray('.gallery__right .gallery__item');
+        gsap.fromTo(
+            item,
+            { opacity: 0, x: fromX },
+            {
+                opacity: 1,
+                x: 0,
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top bottom',
+                    end: 'top top',
+                    scrub: true,
+                },
+            }
+        );
+    });
+} else {
+    let itemsL = gsap.utils.toArray('.gallery__left .gallery__item');
+    itemsL.forEach(item => {
+        gsap.fromTo(
+            item,
+            { opacity: 0, x: -90 },
+            {
+                opacity: 1,
+                x: 0,
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 80%',
+                    end: 'top 20%',
+                    scrub: true,
+                },
+            }
+        );
+    });
 
-itemsR.forEach(item => {
-    gsap.fromTo(
-        item,
-        { opacity: 0, x: 100 },
-        {
-            opacity: 1,
-            x: 0,
-            scrollTrigger: {
-                trigger: item,
-                start: 'top 100%',
-                end: 'top 80%',
-                scrub: true,
-            },
-        }
-    );
-});
+    let itemsR = gsap.utils.toArray('.gallery__right .gallery__item');
+    itemsR.forEach(item => {
+        gsap.fromTo(
+            item,
+            { opacity: 0, x: -50 },
+            {
+                opacity: 1,
+                x: 0,
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 130%',
+                    end: 'top 40%',
+                    scrub: true,
+                },
+            }
+        );
+    });
+}
