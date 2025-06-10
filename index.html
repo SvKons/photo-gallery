@@ -16,6 +16,20 @@
     </head>
     <body>
         <div class="wrapper">
+            <audio id="myAudio">
+                <source src="./audio/Pink Sweat$ - At My Worst (Gustixa Remix).mp3" type="audio/mp3" />
+                Ваш браузер не поддерживает элемент audio.
+            </audio>
+            <div class="button-wrapper">
+                <button onclick="playAudio()">
+                    <div class="button-outer">
+                        <div class="button-inner">
+                            <span>Click me</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
             <div class="content">
                 <div class="portfolio">
                     <div class="container">
@@ -65,5 +79,12 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            function playAudio() {
+                var audio = document.getElementById('myAudio');
+                audio.play();
+            }
+        </script>
     </body>
 </html>
