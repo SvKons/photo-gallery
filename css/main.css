@@ -21,8 +21,14 @@ body {
     background-image: url(../img/bg.jpg);
     background-size: 50px;
     color: #fafafa;
+    box-sizing: border-box;
     overflow-x: hidden;
 }
+
+.wrapper {
+    overflow-x: hidden !important;
+}
+
 .container {
     padding: 0 20vw;
 }
